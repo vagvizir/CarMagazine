@@ -1,7 +1,7 @@
 package service;
 
 import org.example.service.CarService;
-import org.example.service.PersonService;
+import org.example.service.PersonServiceImpl;
 import org.example.models.Car;
 import org.example.models.Person;
 import org.junit.jupiter.api.Assertions;
@@ -20,13 +20,13 @@ public class AppTest {
 
     @Test
     void addPersonBaseDate() {
-        PersonService personService = new PersonService();
+        PersonServiceImpl personService = new PersonServiceImpl();
         Person person = new Person("Max", "Smirnov", "max@mail.ru",
                 "8800 555 55 55", 2_000_000);
 
-        personService.personDB.add(person);
+        personService.savePerson(person);
 
-        Assertions.assertEquals(personService.personDB.size(), 1);
+        Assertions.assertEquals(personService.getPerson(0), person);
     }
 
     @Test

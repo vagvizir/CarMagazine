@@ -10,4 +10,13 @@ public class Car {
         this.name = name;
         this.powerHorse = powerHorse;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", powerHorse=" + powerHorse +
+                ", price=" + price +
+                '}';
+    }
 }

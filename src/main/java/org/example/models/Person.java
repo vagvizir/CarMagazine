@@ -14,4 +14,15 @@ public class Person {
         this.number = number;
         this.money = money;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", number='" + number + '\'' +
+                ", money=" + money +
+                '}';
+    }
 }

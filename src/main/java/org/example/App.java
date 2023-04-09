@@ -1,10 +1,11 @@
 package org.example;
 
 import org.example.service.CarService;
-import org.example.service.PersonService;
+import org.example.service.PersonServiceImpl;
 import org.example.models.Car;
 import org.example.models.Person;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -18,11 +19,11 @@ public class App {
         carService.carDB.add(carOne);
         carService.carDB.add(carTwo);
 
-        PersonService personService = new PersonService();
+        PersonServiceImpl personService = new PersonServiceImpl();
         Person person = new Person("Max", "Smirnov", "max@mail.ru",
                 "8800 555 55 55", 2_000_000);
 
-        personService.personDB.add(person);
+        personService.savePerson(person);
 
         System.out.println("Menu: ");
         System.out.println("1. Добавить машину");
@@ -30,5 +31,8 @@ public class App {
         System.out.println("3. Купить машину");
 
         int target = scanner.nextInt();
+
+        System.out.println(Arrays.toString(carService.carDB.toArray()));
+        System.out.println(personService.getPerson(0));
     }
 }
