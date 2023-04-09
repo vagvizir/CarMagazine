@@ -5,6 +5,8 @@ import org.example.dao.CarDaoImpl;
 import org.example.models.Car;
 import org.example.models.Person;
 
+import java.util.List;
+
 public class CarServiceImpl implements CarService {
     CarDao carDao = new CarDaoImpl();
 
@@ -26,5 +28,15 @@ public class CarServiceImpl implements CarService {
     @Override
     public void bayCar(Person person, int id) {
         carDao.bayCar(person, id);
+    }
+
+    @Override
+    public int sizeDB() {
+        return carDao.sizeDB();
+    }
+
+    @Override
+    public List<Car> getCars() {
+        return carDao.getAll();
     }
 }

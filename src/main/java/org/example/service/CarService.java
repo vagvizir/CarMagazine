@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface CarService {
-    public void saveCar(Car car);
-    public Car getCar(int carId);
-    public void deleteCar(int carId);
-    public void bayCar(Person person, int id);
+    void saveCar(Car car);
+    Car getCar(int carId);
+    void deleteCar(int carId);
+    void bayCar(Person person, int id);
+    int sizeDB();
+    List<Car> getCars();
 }

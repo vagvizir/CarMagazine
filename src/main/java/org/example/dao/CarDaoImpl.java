@@ -30,4 +30,14 @@ public class CarDaoImpl implements CarDao {
         person.money -= cars.get(id).price;
         cars.remove(id);
     }
+
+    @Override
+    public int sizeDB() {
+        return cars.size();
+    }
+
+    @Override
+    public List<Car> getAll() {
+        return cars;
+    }
 }

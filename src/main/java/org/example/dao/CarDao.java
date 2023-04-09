@@ -3,10 +3,14 @@ package org.example.dao;
 import org.example.models.Car;
 import org.example.models.Person;
 
+import java.util.List;
+
 public interface CarDao {
-    public void saveCar(Car car);
-    public Car getCar(int carId);
-    public void deleteCar(int carId);
-    public void bayCar(Person person, int id);
+    void saveCar(Car car);
+    Car getCar(int carId);
+    void deleteCar(int carId);
+    void bayCar(Person person, int id);
+    int sizeDB();
+    List<Car> getAll();
 
 }
