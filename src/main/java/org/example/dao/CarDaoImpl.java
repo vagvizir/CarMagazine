@@ -27,7 +27,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public void bayCar(Person person, int id) {
-        person.money -= cars.get(id).price;
+        person.money -= cars.get(id).getPrice();
         cars.remove(id);
     }
 
