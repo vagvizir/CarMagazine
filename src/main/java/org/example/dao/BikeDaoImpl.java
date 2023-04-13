@@ -26,7 +26,7 @@ public class BikeDaoImpl implements BikeDao {
 
     @Override
     public void buyBike(Person person, int id) {
-        person.money -= bikes.get(id).getPrice();
+        person.setMoney(person.getMoney() - bikes.get(id).getPrice());
         bikes.remove(id);
     }
 

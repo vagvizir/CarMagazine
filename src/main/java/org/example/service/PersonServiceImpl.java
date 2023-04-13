@@ -1,14 +1,15 @@
 package org.example.service;
 
+import org.example.dao.PersonDao;
 import org.example.dao.PersonDaoImpl;
 import org.example.models.Person;
 
 public class PersonServiceImpl implements PersonService {
-    PersonDaoImpl personDao = new PersonDaoImpl();
+    PersonDao personDao = new PersonDaoImpl();
 
     @Override
-    public void savePerson(Person person) {
-        personDao.savePerson(person);
+    public void savePerson(Person... persons) {
+        personDao.savePerson(persons);
     }
 
     @Override
@@ -19,5 +20,15 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public void deletePerson(int personId) {
         personDao.deletePerson(personId);
+    }
+
+    @Override
+    public Person getMaxMoneyPerson() {
+        return personDao.getMaxMoneyPerson();
+    }
+
+    @Override
+    public Person getMinMoneyPerson() {
+        return personDao.getMinMoneyPerson();
     }
 }
