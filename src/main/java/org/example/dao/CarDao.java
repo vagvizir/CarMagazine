@@ -6,7 +6,7 @@ import org.example.models.Person;
 import java.util.List;
 
 public interface CarDao {
-    void saveCar(Car car);
+    void saveCar(Car... cars);
     Car getCar(int carId);
     void deleteCar(int carId);
     void bayCar(Person person, int id);

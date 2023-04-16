@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface CarService {
-    void saveCar(Car car);
+    void saveCar(Car... cars);
     Car getCar(int carId);
     void deleteCar(int carId);
     void bayCar(Person person, int id);

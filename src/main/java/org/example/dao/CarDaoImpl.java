@@ -4,6 +4,7 @@ import org.example.models.Car;
 import org.example.models.Person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CarDaoImpl implements CarDao {
@@ -11,8 +12,8 @@ public class CarDaoImpl implements CarDao {
     List<Car> cars = new ArrayList<>();
 
     @Override
-    public void saveCar(Car car) {
-        cars.add(car);
+    public void saveCar(Car... cars) {
+        this.cars.addAll(Arrays.asList(cars));
     }
 
     @Override

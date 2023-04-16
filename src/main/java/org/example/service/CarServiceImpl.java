@@ -11,8 +11,8 @@ public class CarServiceImpl implements CarService {
     CarDao carDao = new CarDaoImpl();
 
     @Override
-    public void saveCar(Car car) {
-        carDao.saveCar(car);
+    public void saveCar(Car... cars) {
+        carDao.saveCar(cars);
     }
 
     @Override
