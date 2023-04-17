@@ -1,5 +1,6 @@
 package org.example.util;
 
+import org.example.models.Bike;
 import org.example.models.Car;
 
 import java.util.ArrayList;
@@ -16,6 +17,17 @@ public class Util {
             }
         }
 
+        return result;
+    }
+
+    public static List<Bike> filterBike(List<Bike> bikes, Predicate<Bike> predicate) {
+        List<Bike> result = new ArrayList<>();
+
+        for (Bike bike : bikes) {
+            if (predicate.test(bike)) {
+                result.add(bike);
+            }
+        }
         return result;
     }
 
@@ -42,4 +54,5 @@ public class Util {
 //
 //        return result;
 //    }
+
 }

@@ -1,5 +1,6 @@
 package org.example;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import org.example.models.Bike;
 import org.example.service.*;
 import org.example.models.Car;
@@ -95,12 +96,21 @@ public class App {
 
 
 
-//        BikeService bikeService = new BikeServiceImpl();
-//        Bike bikeOne = new Bike("Kawasaki", 200, 500_000);
-//        Bike bikeTwo = new Bike("Suzuki", 190, 450_000);
-//
-//        bikeService.saveBike(bikeOne);
-//        bikeService.saveBike(bikeTwo);
+        BikeService bikeService = new BikeServiceImpl();
+        Bike bikeOne = new Bike("Kawasaki", 200, 500_000);
+        Bike bikeTwo = new Bike("Suzuki", 190, 450_000);
+        Bike bikeThree = new Bike("Honda", 150, 430_000);
+        Bike bikeFour = new Bike("Alpina", 230, 330_000);
+        Bike bikeFive = new Bike("Java", 100, 150_000);
+
+        bikeService.saveBike(bikeOne, bikeTwo, bikeThree, bikeFour, bikeFive);
+
+        System.out.println(Util.filterBike(bikeService.getBikes(),
+                (bike -> bike.getPrice() > 330_000)));
+        System.out.println(Util.filterBike(bikeService.getBikes(),
+                (bike -> bike.getPower() < 190)));
+        System.out.println(Util.filterBike(bikeService.getBikes(),
+                (bike -> bike.getPower() > 150 && bike.getPrice() > 450_000)));
 //
 //        PersonServiceImpl personService = new PersonServiceImpl();
 //        Person person = new Person("Max", "Smirnov", "max@mail.ru",

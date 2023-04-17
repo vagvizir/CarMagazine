@@ -11,8 +11,8 @@ public class BikeServiceImpl implements BikeService {
     BikeDao bikeDao = new BikeDaoImpl();
 
     @Override
-    public void saveBike(Bike bike) {
-        bikeDao.saveBike(bike);
+    public void saveBike(Bike... bikes) {
+        bikeDao.saveBike(bikes);
     }
 
     @Override

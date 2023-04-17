@@ -4,14 +4,15 @@ import org.example.models.Bike;
 import org.example.models.Person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BikeDaoImpl implements BikeDao {
     List <Bike> bikes = new ArrayList<>();
 
     @Override
-    public void saveBike(Bike bike) {
-        bikes.add(bike);
+    public void saveBike(Bike... bikes) {
+        this.bikes.addAll(Arrays.asList(bikes));
     }
 
     @Override
