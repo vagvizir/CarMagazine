@@ -26,6 +26,26 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Car getMaxCarPrice() {
+        return carDao.getMaxCarPrice();
+    }
+
+    @Override
+    public Car getMinCarPrice() {
+        return carDao.getMinCarPrice();
+    }
+
+    @Override
+    public Car getMaxCarPower() {
+        return carDao.getMaxCarPower();
+    }
+
+    @Override
+    public Car getMinCarPower() {
+        return carDao.getMinCarPower();
+    }
+
+    @Override
     public void bayCar(Person person, int id) {
         carDao.bayCar(person, id);
     }

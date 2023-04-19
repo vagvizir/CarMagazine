@@ -12,6 +12,10 @@ public interface CarService {
     void saveCar(Car... cars);
     Car getCar(int carId);
     void deleteCar(int carId);
+    Car getMaxCarPrice();
+    Car getMinCarPrice();
+    Car getMaxCarPower();
+    Car getMinCarPower();
     void bayCar(Person person, int id);
     int sizeDB();
     List<Car> getCars();

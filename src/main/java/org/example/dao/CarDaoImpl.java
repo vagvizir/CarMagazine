@@ -27,6 +27,26 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
+    public  Car getMaxCarPrice() {
+        cars.sort((c1, c2) -> Double.compare(c1.getPrice(), c2.getPrice()));
+        return cars.get(cars.size() - 1);
+    }
+    @Override
+    public Car getMinCarPrice() {
+        cars.sort((c1, c2) -> Double.compare(c1.getPrice(), c2.getPrice()));
+        return cars.get(cars.size() - 1);
+    }
+    @Override
+    public Car getMaxCarPower() {
+        cars.sort((c1, c2) -> Integer.compare(c1.getPowerHorse(), c2.getPowerHorse()));
+        return cars.get(cars.size());
+    }
+    @Override
+    public Car getMinCarPower() {
+        cars.sort((c1, c2) -> Integer.compare(c1.getPowerHorse(), c2.getPowerHorse()));
+        return cars.get(cars.size());
+    }
+    @Override
     public void bayCar(Person person, int id) {
         person.setMoney(person.getMoney() - cars.get(id).getPrice());
         cars.remove(id);

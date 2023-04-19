@@ -26,6 +26,26 @@ public class BikeServiceImpl implements BikeService {
     }
 
     @Override
+    public Bike getMaxBikePrice() {
+        return bikeDao.getMaxBikePrice();
+    }
+
+    @Override
+    public Bike getMinBikePrice() {
+        return bikeDao.getMinBikePrice();
+    }
+
+    @Override
+    public Bike getMaxBikePower() {
+        return bikeDao.getMaxBikePower();
+    }
+
+    @Override
+    public Bike getMinBikePower() {
+        return bikeDao.getMinBikePower();
+    }
+
+    @Override
     public void buyBike(Person person, int id) {
         bikeDao.buyBike(person, id);
     }

@@ -1,11 +1,9 @@
 package service;
 
-import org.example.service.CarService;
-import org.example.service.CarServiceImpl;
-import org.example.service.PersonService;
-import org.example.service.PersonServiceImpl;
+import org.example.service.*;
 import org.example.models.Car;
 import org.example.models.Person;
+import org.example.models.Bike;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -61,5 +59,36 @@ public class AppTest {
 
         assertEquals(personService.getMaxMoneyPerson(), personTwo);
         assertEquals(personService.getMinMoneyPerson(), person);
+    }
+
+    @Test
+    void getBikeMaxMinPricePower() {
+        BikeService bikeService1 = new BikeServiceImpl();
+
+        Bike bikeOne = new Bike("BMW", 230, 1_900_000);
+        Bike bikeTwo = new Bike("Honda", 249, 1_850_000);
+
+        bikeService1.saveBike(bikeOne, bikeTwo);
+
+        assertEquals(bikeService1.getMaxBikePrice(), bikeOne);
+        assertEquals(bikeService1.getMinBikePrice(),bikeTwo);
+        assertEquals(bikeService1.getMinBikePower(),bikeOne);
+        assertEquals(bikeService1.getMaxBikePower(),bikeTwo);
+        // как передать bikeOne и bikeTwo из util / App / bikeServiceImpl или так не надо передавать?
+    }
+
+    @Test
+    void getCarMaxMinPricePower() {
+        CarService carService1 = new CarServiceImpl();
+
+        Car carOne = new Car("Lada", 107, 1_200_000);
+        Car carTwo = new Car("Cherry", 126, 3_200_000);
+
+        carService1.saveCar(carOne, carTwo);
+
+        assertEquals(carService1.getMaxCarPrice(), carTwo);
+        assertEquals(carService1.getMinCarPrice(), carOne);
+        assertEquals(carService1.getMaxCarPower(), carTwo);
+        assertEquals(carService1.getMinCarPower(), carOne);
     }
 }

@@ -11,5 +11,9 @@ public interface BikeDao {
     void deleteBike(int bikeId);
     void buyBike(Person person, int id);
     int sizeDb();
+    Bike getMaxBikePrice();
+    Bike getMinBikePrice();
+    Bike getMaxBikePower();
+    Bike getMinBikePower();
     List<Bike> getAll();
 }

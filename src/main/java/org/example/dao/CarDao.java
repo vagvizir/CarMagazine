@@ -11,6 +11,10 @@ public interface CarDao {
     void deleteCar(int carId);
     void bayCar(Person person, int id);
     int sizeDB();
+    Car getMaxCarPrice();
+    Car getMinCarPrice();
+    Car getMaxCarPower();
+    Car getMinCarPower();
     List<Car> getAll();
 
 }
