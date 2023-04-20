@@ -111,15 +111,17 @@ public class App {
                 (bike -> bike.getPower() < 190)));
         System.out.println(Util.filterBike(bikeService.getBikes(),
                 (bike -> bike.getPower() > 150 && bike.getPrice() > 450_000)));
-//
-//        PersonServiceImpl personService = new PersonServiceImpl();
-//        Person person = new Person("Max", "Smirnov", "max@mail.ru",
-//                "8800 555 55 55", 2_000_000);
-//        personService.savePerson(person);
-//
-//        Person persontwo = new Person("Mike", "Smith", "Mike32d@gmail.com",
-//                "+1(545)452-7831", 3_500_000);
-//        personService.savePerson(persontwo);
+
+
+        PersonServiceImpl personService = new PersonServiceImpl();
+        Person person = new Person("Max", "Smirnov", "max@mail.ru",
+                "8800 555 55 55", 2_000_000);
+        personService.savePerson(person);
+
+        Person persontwo = new Person("Mike", "Smith", "Mike32d@gmail.com",
+                "+1(545)452-7831", 3_500_000);
+        personService.savePerson(persontwo);
+
 //
 //        System.out.println("Menu: ");
 //        System.out.println("1. Добавить машину");
@@ -133,5 +135,7 @@ public class App {
 //
 //        System.out.println(Arrays.toString(bikeService.getBikes().toArray()));
 //        System.out.println((personService.getPerson(1)));
+
+
     }
 }

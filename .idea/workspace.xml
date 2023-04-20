@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="033f51bb-58c1-4e0e-b12e-fa299aa8bdf0" name="Changes" comment="3.0 added DaoPerson, ServicePerson">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="033f51bb-58c1-4e0e-b12e-fa299aa8bdf0" name="Changes" comment="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Bike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BikeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BikeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BikeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CarServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/service/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +163,9 @@
       <workItem from="1681401944536" duration="4475000" />
       <workItem from="1681661635017" duration="2848000" />
       <workItem from="1681847898304" duration="1198000" />
-      <workItem from="1681885975472" duration="9250000" />
+      <workItem from="1681885975472" duration="9978000" />
+      <workItem from="1681942255152" duration="808000" />
+      <workItem from="1682006521388" duration="905000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1680802079664</created>
@@ -195,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681406070215</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests">
+      <created>1681935281978</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681935281978</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +216,8 @@
     <MESSAGE value="1.0" />
     <MESSAGE value="3.0 added DaoPerson, ServicePerson" />
     <MESSAGE value="4.0 added method getMaxMoneyPerson and getMinMoneyPerson. Added dependency lombok" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.0 added method getMaxMoneyPerson and getMinMoneyPerson. Added dependency lombok" />
+    <MESSAGE value="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CarMagazine$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1681405739309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
