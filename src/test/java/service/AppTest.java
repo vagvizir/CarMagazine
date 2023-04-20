@@ -71,14 +71,10 @@ public class AppTest {
         bikeService1.saveBike(bikeOne, bikeTwo);
 
         assertEquals(bikeService1.getMaxBikePrice(), bikeOne);
-        assertEquals(bikeService1.getMinBikePrice(), bikeTwo);
-        assertEquals(bikeService1.getMinBikePower(), bikeOne);
-        assertEquals(bikeService1.getMaxBikePower(), bikeTwo);
-
-        out.println(bikeService1.getMaxBikePrice());
-        out.println(bikeService1.getMinBikePrice());
-        out.println(bikeService1.getMaxBikePower());
-        out.println(bikeService1.getMinBikePower());
+        assertEquals(bikeService1.getMinBikePrice(),bikeTwo);
+        assertEquals(bikeService1.getMinBikePower(),bikeOne);
+        assertEquals(bikeService1.getMaxBikePower(),bikeTwo);
+        // как передать bikeOne и bikeTwo из util / App / bikeServiceImpl или так не надо передавать?
     }
 
     @Test

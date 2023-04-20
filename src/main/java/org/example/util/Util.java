@@ -3,11 +3,26 @@ package org.example.util;
 import org.example.models.Bike;
 import org.example.models.Car;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class Util {
+    private static final String URL = "jdbc:mysql://localhost:2222/mysql";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root";
+
+    public static Connection getConnection() throws SQLException {
+        try {
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            System.out.println("Соединения не установленно");
+            throw e;
+        }
+    }
     public static List<Car> filterCar(List<Car> cars, Predicate<Car> predicate) {
         List<Car> result = new ArrayList<>();
 

@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="033f51bb-58c1-4e0e-b12e-fa299aa8bdf0" name="Changes" comment="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests">
+    <list default="true" id="033f51bb-58c1-4e0e-b12e-fa299aa8bdf0" name="Changes" comment="3.0 added DaoPerson, ServicePerson">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc0efd80abef8144cb3de44d00785a18d87c7fbd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/cc0efd80abef8144cb3de44d00785a18d87c7fbd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDaoJdbcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lessons/Func.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lessons/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/BikeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/CarDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/service/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +33,15 @@
       </list>
     </option>
   </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <toolWindowEditorPreview>false</toolWindowEditorPreview>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-18.0.2/lib/src.zip!/java.base/java/util/List.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-18.0.2/lib/src.zip!/java.base/java/util/function/Predicate.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,33 +54,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.getCarMaxMinPricePower">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="MagazineCar" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Func" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.lessons.Func" />
+      <module name="MagazineCar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.lessons.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,29 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.getPersonMaxAndMinMoney" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MagazineCar" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.AppTest" />
-      <option name="METHOD_NAME" value="getPersonMaxAndMinMoney" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.Func" />
         <item itemvalue="JUnit.AppTest.getCarMaxMinPricePower" />
         <item itemvalue="JUnit.AppTest.getBikeMaxMinPricePower" />
         <item itemvalue="JUnit.AppTest" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.AppTest.getPersonMaxAndMinMoney" />
       </list>
     </recent_temporary>
   </component>
@@ -163,9 +184,7 @@
       <workItem from="1681401944536" duration="4475000" />
       <workItem from="1681661635017" duration="2848000" />
       <workItem from="1681847898304" duration="1198000" />
-      <workItem from="1681885975472" duration="9978000" />
-      <workItem from="1681942255152" duration="808000" />
-      <workItem from="1682006521388" duration="905000" />
+      <workItem from="1681885975472" duration="9250000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1680802079664</created>
@@ -188,14 +207,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681406070215</updated>
     </task>
-    <task id="LOCAL-00004" summary="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests">
-      <created>1681935281978</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1681935281978</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,11 +228,13 @@
     <MESSAGE value="1.0" />
     <MESSAGE value="3.0 added DaoPerson, ServicePerson" />
     <MESSAGE value="4.0 added method getMaxMoneyPerson and getMinMoneyPerson. Added dependency lombok" />
-    <MESSAGE value="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.2 добавлены MinMax Power &amp; Price для Car и Bike + Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.0 added method getMaxMoneyPerson and getMinMoneyPerson. Added dependency lombok" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CarMagazine$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1681405739309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CarMagazine$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1681728960970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CarMagazine$AppTest_addCarBaseDate.ic" NAME="AppTest.addCarBaseDate Coverage Results" MODIFIED="1681728955690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>service.*</FILTER>
     </SUITE>
   </component>

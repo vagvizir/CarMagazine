@@ -1,6 +1,7 @@
 package org.example;
 
 import jdk.swing.interop.SwingInterOpUtils;
+import org.example.dao.BikeDaoJdbcImpl;
 import org.example.models.Bike;
 import org.example.service.*;
 import org.example.models.Car;
@@ -14,6 +15,8 @@ import java.util.function.Predicate;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        BikeDaoJdbcImpl daoJdbc = new BikeDaoJdbcImpl();
+        daoJdbc.createTable();
 
         CarService carService = new CarServiceImpl();
         Car carOne = new Car("BMW", 700, 1_000_000);
