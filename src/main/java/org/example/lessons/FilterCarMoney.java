@@ -1,4 +1,4 @@
-package org.example;
+package org.example.lessons;
 
 import org.example.models.Car;
 

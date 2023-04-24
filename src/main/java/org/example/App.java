@@ -15,8 +15,55 @@ import java.util.function.Predicate;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Bike bikeSave = new Bike("BMW", 400, 1_000_000);
+        Bike bikeSaveTwo = new Bike("Suzuki", 1000, 4_000_000);
+
         BikeDaoJdbcImpl daoJdbc = new BikeDaoJdbcImpl();
-        daoJdbc.createTable();
+//        daoJdbc.dropTable();
+//        daoJdbc.dropTable();
+//        daoJdbc.createTable();
+//        daoJdbc.createTable();
+//        daoJdbc.saveBike(bikeSave);
+//        daoJdbc.saveBike(bikeSaveTwo);
+//        daoJdbc.saveBike(bikeSaveTwo);
+//
+//        System.out.println(daoJdbc.getBike(1));
+//        System.out.println(daoJdbc.getBike(2));
+//        System.out.println(daoJdbc.getBike(3));
+//
+//        System.out.println(daoJdbc.getAllBikes());
+//
+//        daoJdbc.deleteBike(2);
+//
+//        System.out.println(daoJdbc.getAllBikes());
+//
+//        daoJdbc.cleanTable();
+//
+//        System.out.println(daoJdbc.getAllBikes());
+//
+//        daoJdbc.saveBike(bikeSaveTwo);
+//        daoJdbc.saveBike(bikeSaveTwo);
+//
+//        System.out.println(daoJdbc.getBike(1));
+//        System.out.println(daoJdbc.getBike(2));
+//        System.out.println(daoJdbc.getAllBikes());
+
+//        daoJdbc.dropTable();
+//        daoJdbc.createTable();
+//        daoJdbc.saveBike(bikeSaveTwo);
+//        daoJdbc.saveBike(bikeSaveTwo);
+//        daoJdbc.saveBike(bikeSave);
+//        daoJdbc.deleteBike(bikeSaveTwo.getModel());
+//        System.out.println(daoJdbc.getAllBikes());
+//        daoJdbc.saveBike(bikeSaveTwo);
+//        System.out.println(daoJdbc.getAllBikes());
+//        daoJdbc.deleteBike(bikeSave.getModel());
+//        System.out.println(daoJdbc.getAllBikes());
+
+
+
+
+
 
         CarService carService = new CarServiceImpl();
         Car carOne = new Car("BMW", 700, 1_000_000);

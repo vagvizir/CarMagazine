@@ -1,11 +1,10 @@
-package org.example;
+package org.example.lessons;
 
 import org.example.models.Person;
 import org.example.service.PersonService;
 import org.example.service.PersonServiceImpl;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class StreamAndComparableLesson {
     public static void main(String[] args) {
