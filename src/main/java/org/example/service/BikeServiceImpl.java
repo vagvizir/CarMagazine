@@ -1,62 +1,50 @@
 package org.example.service;
 
-import org.example.dao.BikeDao;
-import org.example.dao.BikeDaoImpl;
+import org.example.dao.BikeDaoJdbc;
+import org.example.dao.BikeDaoJdbcImpl;
 import org.example.models.Bike;
-import org.example.models.Person;
-
 import java.util.List;
 
 public class BikeServiceImpl implements BikeService {
-    BikeDao bikeDao = new BikeDaoImpl();
+    BikeDaoJdbc bikeDao = new BikeDaoJdbcImpl();
 
     @Override
-    public void saveBike(Bike... bikes) {
-        bikeDao.saveBike(bikes);
+    public void createTable() {
+        bikeDao.createTable();
     }
 
     @Override
-    public Bike getBike(int bikeId) {
-        return bikeDao.getBike(bikeId);
+    public void dropTable() {
+        bikeDao.dropTable();
     }
 
     @Override
-    public void deleteBike(int bikeId) {
-        bikeDao.deleteBike(bikeId);
+    public void cleanTable() {
+        bikeDao.cleanTable();
     }
 
     @Override
-    public Bike getMaxBikePrice() {
-        return bikeDao.getMaxBikePrice();
+    public Bike getBike(int id) {
+        return bikeDao.getBike(id);
     }
 
     @Override
-    public Bike getMinBikePrice() {
-        return bikeDao.getMinBikePrice();
+    public void deleteBike(int id) {
+        bikeDao.deleteBike(id);
     }
 
     @Override
-    public Bike getMaxBikePower() {
-        return bikeDao.getMaxBikePower();
+    public void deleteBike(String name) {
+        bikeDao.deleteBike(name);
     }
 
     @Override
-    public Bike getMinBikePower() {
-        return bikeDao.getMinBikePower();
+    public List<Bike> getAllBikes() {
+        return bikeDao.getAllBikes();
     }
 
     @Override
-    public void buyBike(Person person, int id) {
-        bikeDao.buyBike(person, id);
-    }
-
-    @Override
-    public int sizeDB() {
-        return bikeDao.sizeDb();
-    }
-
-    @Override
-    public List<Bike> getBikes() {
-        return bikeDao.getAll();
+    public void saveBike(Bike bike) {
+        bikeDao.saveBike(bike);
     }
 }

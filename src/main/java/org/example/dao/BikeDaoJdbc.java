@@ -1,11 +1,16 @@
-package org.example.service;
+package org.example.dao;
 
 import org.example.models.Bike;
-import org.example.models.Person;
+import org.example.util.ConnectionManager;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
-public interface BikeService {
+public interface BikeDaoJdbc {
     void createTable();
     void dropTable();
     void cleanTable();

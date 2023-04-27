@@ -1,16 +1,13 @@
 package org.example;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import org.example.dao.BikeDaoJdbcImpl;
 import org.example.models.Bike;
 import org.example.service.*;
 import org.example.models.Car;
 import org.example.models.Person;
-import org.example.util.Util;
+import org.example.util.ModelsFilter;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.Predicate;
 
 public class App {
     public static void main(String[] args) {
@@ -132,11 +129,11 @@ public class App {
 //        Predicate
 //                                                                      boolean test(T t);
 
-        System.out.println(Util.filterCar(carService.getCars(),
+        System.out.println(ModelsFilter.filterCar(carService.getCars(),
                 (car) -> car.getPrice() > 499_000));
-        System.out.println(Util.filterCar(carService.getCars(),
+        System.out.println(ModelsFilter.filterCar(carService.getCars(),
                 (car) -> car.getPowerHorse() > 200));
-        System.out.println(Util.filterCar(carService.getCars(),
+        System.out.println(ModelsFilter.filterCar(carService.getCars(),
                 (car) -> car.getPowerHorse() <= 300 && car.getPrice() <= 500_000));
 
 
@@ -147,19 +144,23 @@ public class App {
 
 
         BikeService bikeService = new BikeServiceImpl();
-        Bike bikeOne = new Bike("Kawasaki", 200, 500_000);
-        Bike bikeTwo = new Bike("Suzuki", 190, 450_000);
-        Bike bikeThree = new Bike("Honda", 150, 430_000);
-        Bike bikeFour = new Bike("Alpina", 230, 330_000);
-        Bike bikeFive = new Bike("Java", 100, 150_000);
+//        Bike bikeOne = new Bike("Kawasaki", 200, 500_000);
+//        Bike bikeTwo = new Bike("Suzuki", 190, 450_000);
+//        Bike bikeThree = new Bike("Honda", 150, 430_000);
+//        Bike bikeFour = new Bike("Alpina", 230, 330_000);
+//        Bike bikeFive = new Bike("Java", 100, 150_000);
+//
+//        bikeService.saveBike(bikeOne);
+//        bikeService.saveBike(bikeTwo);
+//        bikeService.saveBike(bikeThree);
+//        bikeService.saveBike(bikeFour);
+//        bikeService.saveBike(bikeFive);
 
-        bikeService.saveBike(bikeOne, bikeTwo, bikeThree, bikeFour, bikeFive);
-
-        System.out.println(Util.filterBike(bikeService.getBikes(),
+        System.out.println(ModelsFilter.filterBike(bikeService.getAllBikes(),
                 (bike -> bike.getPrice() > 330_000)));
-        System.out.println(Util.filterBike(bikeService.getBikes(),
+        System.out.println(ModelsFilter.filterBike(bikeService.getAllBikes(),
                 (bike -> bike.getPower() < 190)));
-        System.out.println(Util.filterBike(bikeService.getBikes(),
+        System.out.println(ModelsFilter.filterBike(bikeService.getAllBikes(),
                 (bike -> bike.getPower() > 150 && bike.getPrice() > 450_000)));
 
 

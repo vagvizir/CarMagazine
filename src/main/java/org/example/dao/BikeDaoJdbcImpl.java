@@ -1,15 +1,16 @@
 package org.example.dao;
 
 import org.example.models.Bike;
-import org.example.util.Util;
+import org.example.util.ConnectionManager;
+import org.example.util.ModelsFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BikeDaoJdbcImpl {
+public class BikeDaoJdbcImpl implements BikeDaoJdbc {
     public void createTable() {
-        try (Statement statement = Util.getConnection().createStatement()) {
+        try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("CREATE TABLE IF NOT EXISTS bikes (id BIGINT PRIMARY KEY AUTO_INCREMENT, " +
                     "model VARCHAR(45), price DOUBLE, power INT)");
             System.out.println("Таблица bikes создана!");
@@ -19,7 +20,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public void dropTable() {
-        try (Statement statement = Util.getConnection().createStatement()) {
+        try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("DROP TABLE IF EXISTS bikes");
             System.out.println("Таблица bikes удалена!");
         } catch (SQLException e) {
@@ -28,7 +29,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public void cleanTable() {
-        try (Statement statement = Util.getConnection().createStatement()) {
+        try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("TRUNCATE TABLE bikes");
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -36,7 +37,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public Bike getBike(int id) {
-        try (Statement statement = Util.getConnection().createStatement()) {
+        try (Statement statement = ConnectionManager.open().createStatement()) {
             // execute - true / false
             // executeQuery - ResultSet
             ResultSet resultSet = statement.executeQuery("SELECT * FROM bikes WHERE id = " + id);
@@ -57,7 +58,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public void deleteBike(int id) {
-        try (PreparedStatement statement = Util.getConnection()
+        try (PreparedStatement statement = ConnectionManager.open()
                 .prepareStatement("DELETE FROM bikes WHERE id=?")) {
             statement.setInt(1, id);
             statement.execute();
@@ -67,7 +68,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public void deleteBike(String name) {
-        try (PreparedStatement statement = Util.getConnection()
+        try (PreparedStatement statement = ConnectionManager.open()
                 .prepareStatement("DELETE FROM bikes WHERE model=?")) {
             statement.setString(1, name);
             statement.execute();
@@ -77,7 +78,7 @@ public class BikeDaoJdbcImpl {
     }
 
     public List<Bike> getAllBikes() {
-        try (Statement statement = Util.getConnection().createStatement()) {
+        try (Statement statement = ConnectionManager.open().createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM bikes");
 
             List<Bike> result = new ArrayList<>();
@@ -100,7 +101,7 @@ public class BikeDaoJdbcImpl {
 
 //            "model VARCHAR(45), price DOUBLE, power INT
     public void saveBike(Bike bike) {
-        try (PreparedStatement statement = Util.getConnection()
+        try (PreparedStatement statement = ConnectionManager.open()
                 .prepareStatement("INSERT INTO bikes (model, price, power) VALUES (?, ?, ?)")) {
             statement.setString(1, bike.getModel());
             statement.setDouble(2, bike.getPrice());
