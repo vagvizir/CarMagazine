@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.dao.BikeDaoJdbcImpl;
+import org.example.dao.CarDaoJdbcImpl;
+import org.example.models.Bike;
+import org.example.models.Car;
 import org.example.util.ConnectionManager;
 
 import java.sql.Connection;
@@ -9,28 +13,41 @@ import java.sql.Statement;
 
 public class AppTwo {
     public static void main(String[] args) {
-        String sql = """
-                SELECT * 
-                FROM bikes
-                WHERE model = 'Suzuki'
-                """;
+//        String sql = """
+//                SELECT *
+//                FROM bikes
+//                WHERE model = 'Suzuki'
+//                """;
+//
+//        try(Connection connection = ConnectionManager.open();
+//            Statement statement = connection.createStatement()) {
+//            System.out.println(connection.getTransactionIsolation());
+//            System.out.println(connection.getSchema());
+//
+//            ResultSet resultSet = statement.executeQuery(sql);
+//
+//            while (resultSet.next()) {
+//                System.out.println(resultSet.getString("model"));
+//                System.out.println(resultSet.getDouble("price"));
+//                System.out.println(resultSet.getInt("power"));
+//                System.out.println("----------------------------------------------------------------");
+//            }
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
 
-        try(Connection connection = ConnectionManager.open();
-            Statement statement = connection.createStatement()) {
-            System.out.println(connection.getTransactionIsolation());
-            System.out.println(connection.getSchema());
+        BikeDaoJdbcImpl bikeDaoJdbcImpl = new BikeDaoJdbcImpl();
+//        bikeDaoJdbcImpl.createTable();
+//        Bike bikeOne = new Bike("Suzuki", 100, 900_000);
+//        bikeDaoJdbcImpl.deleteBike("Suzuki");
 
-            ResultSet resultSet = statement.executeQuery(sql);
+        CarDaoJdbcImpl carDaoJdbcImpl = new CarDaoJdbcImpl();
+//        carDaoJdbcImpl.dropTable();
+        carDaoJdbcImpl.createTable();
+        Car carOne = new Car("Omoda", 120, 2_200_000);
+        carDaoJdbcImpl.saveCar(carOne);
+        System.out.println(carDaoJdbcImpl.getCar(1));
 
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("model"));
-                System.out.println(resultSet.getDouble("price"));
-                System.out.println(resultSet.getInt("power"));
-                System.out.println("----------------------------------------------------------------");
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
