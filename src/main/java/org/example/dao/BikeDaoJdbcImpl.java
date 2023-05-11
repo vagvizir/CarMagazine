@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BikeDaoJdbcImpl implements BikeDaoJdbc {
+    @Override
     public void createTable() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("CREATE TABLE IF NOT EXISTS bikes (id BIGINT PRIMARY KEY AUTO_INCREMENT, " +
@@ -19,6 +20,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public void dropTable() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("DROP TABLE IF EXISTS bikes");
@@ -28,6 +30,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public void cleanTable() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
             statement.execute("TRUNCATE TABLE bikes");
@@ -36,6 +39,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public Bike getBike(int id) {
         try (Statement statement = ConnectionManager.open().createStatement()) {
             // execute - true / false
@@ -57,9 +61,10 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public void deleteBike(int id) {
         try (PreparedStatement statement = ConnectionManager.open()
-                .prepareStatement("DELETE FROM bikes WHERE id=?")) {
+                .prepareStatement("DELETE FROM bikes WHERE id = ?")) {
             statement.setInt(1, id);
             statement.execute();
         } catch (SQLException e) {
@@ -67,6 +72,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public void deleteBike(String name) {
         try (PreparedStatement statement = ConnectionManager.open()
                 .prepareStatement("DELETE FROM bikes WHERE model=?")) {
@@ -77,6 +83,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
         }
     }
 
+    @Override
     public List<Bike> getAllBikes() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM bikes");
@@ -100,6 +107,7 @@ public class BikeDaoJdbcImpl implements BikeDaoJdbc {
     }
 
 //            "model VARCHAR(45), price DOUBLE, power INT
+    @Override
     public void saveBike(Bike bike) {
         try (PreparedStatement statement = ConnectionManager.open()
                 .prepareStatement("INSERT INTO bikes (model, price, power) VALUES (?, ?, ?)")) {

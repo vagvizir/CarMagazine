@@ -2,8 +2,10 @@ package org.example;
 
 import org.example.dao.BikeDaoJdbcImpl;
 import org.example.dao.CarDaoJdbcImpl;
+import org.example.dao.PersonDaoJdbcImpl;
 import org.example.models.Bike;
 import org.example.models.Car;
+import org.example.models.Person;
 import org.example.util.ConnectionManager;
 
 import java.sql.Connection;
@@ -38,16 +40,27 @@ public class AppTwo {
 //        }
 
         BikeDaoJdbcImpl bikeDaoJdbcImpl = new BikeDaoJdbcImpl();
-//        bikeDaoJdbcImpl.createTable();
-//        Bike bikeOne = new Bike("Suzuki", 100, 900_000);
+        bikeDaoJdbcImpl.createTable();
+        Bike bikeOne = new Bike("Suzuki", 100, 900_000);
 //        bikeDaoJdbcImpl.deleteBike("Suzuki");
 
-        CarDaoJdbcImpl carDaoJdbcImpl = new CarDaoJdbcImpl();
+//        CarDaoJdbcImpl carDaoJdbcImpl = new CarDaoJdbcImpl();
 //        carDaoJdbcImpl.dropTable();
-        carDaoJdbcImpl.createTable();
-        Car carOne = new Car("Omoda", 120, 2_200_000);
-        carDaoJdbcImpl.saveCar(carOne);
-        System.out.println(carDaoJdbcImpl.getCar(1));
+//        carDaoJdbcImpl.createTable();
+//        Car carOne = new Car("Omoda", 120, 2_200_000);
+//        carDaoJdbcImpl.saveCar(carOne);
+//        System.out.println(carDaoJdbcImpl.getCar(1));
+
+        PersonDaoJdbcImpl personDaoJdbc = new PersonDaoJdbcImpl();
+//        personDaoJdbc.dropTable();
+        personDaoJdbc.createTable();
+        Person personOne = new Person("Akakiy",
+                "Ivanov",
+                "akaakaSpv@mail.ru",
+                33,
+                5_600_000);
+        personDaoJdbc.savePerson(personOne);
+        System.out.println(personDaoJdbc.getPerson(0));
 
     }
 }

@@ -16,6 +16,7 @@ public class App {
         Bike bikeSaveTwo = new Bike("Suzuki", 1000, 4_000_000);
 
         BikeDaoJdbcImpl daoJdbc = new BikeDaoJdbcImpl();
+
 //        daoJdbc.dropTable();
 //        daoJdbc.dropTable();
 //        daoJdbc.createTable();
@@ -166,11 +167,11 @@ public class App {
 
         PersonServiceImpl personService = new PersonServiceImpl();
         Person person = new Person("Max", "Smirnov", "max@mail.ru",
-                "8800 555 55 55", 2_000_000);
+                880055555, 2_000_000);
         personService.savePerson(person);
 
         Person persontwo = new Person("Mike", "Smith", "Mike32d@gmail.com",
-                "+1(545)452-7831", 3_500_000);
+                1545452783, 3_500_000);
         personService.savePerson(persontwo);
 
 //

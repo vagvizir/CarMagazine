@@ -2,38 +2,28 @@ package org.example.dao;
 
 import org.example.models.Car;
 import org.example.util.ConnectionManager;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import org.example.util.ModelsFilter;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CarDaoJdbcImpl implements CarDaoJdbc {
 
     @Override
     public void createTable() {
-        String sql = """
-                CREATE TABLE IF NOT EXISTS car (
-                id INT PRIMARY KEY AUTO_INCREMENT,
-                name VARCHAR(45),
-                power_horse INT,
-                price DOUBLE
-                )
-                """;
         try (Statement statement = ConnectionManager.open().createStatement()) {
-            statement.execute(sql);
-            System.out.println("таблица car создана");
+            statement.execute("CREATE TABLE IF NOT EXISTS cars (id INT PRIMARY KEY AUTO_INCREMENT," +
+                            "name VARCHAR(45), power_horse INT, price DOUBLE)");
+            System.out.println("таблица cars создана");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
     public void dropTable() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
-            statement.execute("DROP TABLE IF EXISTS car");
+            statement.execute("DROP TABLE IF EXISTS cars");
             System.out.println("таблица car удалена");
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -44,7 +34,7 @@ public class CarDaoJdbcImpl implements CarDaoJdbc {
     @Override
     public void cleanTable() {
         try (Statement statement = ConnectionManager.open().createStatement()) {
-            statement.execute("TRUNCATE TABLE car");
+            statement.execute("TRUNCATE TABLE cars");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -52,14 +42,19 @@ public class CarDaoJdbcImpl implements CarDaoJdbc {
     }
 
     @Override
-    public Car getCar(int id) { // напмсать через prepareStatement
+    public Car getCar(int id) { // написать через prepareStatement
         try (Statement statement = ConnectionManager.open().createStatement()) {
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM car WHERE id = " + id);
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM cars WHERE id = " + id);
+
             resultSet.next();
+
             Car car = new Car();
+
             car.setName(resultSet.getString("name"));
             car.setPowerHorse(resultSet.getInt("power_horse"));
             car.setPrice(resultSet.getDouble("price"));
+
             return car;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -68,12 +63,24 @@ public class CarDaoJdbcImpl implements CarDaoJdbc {
 
     @Override
     public void deleteCar(int id) {
-
+        try (PreparedStatement statement = ConnectionManager.open()
+                .prepareStatement("DELETE FROM cars WHERE id=?")) {
+            statement.setInt(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void deleteCar(String name) {
-
+    public void deleteCar(String model) {
+        try (PreparedStatement statement = ConnectionManager.open()
+                .prepareStatement("DELETE FROM cars WHERE id = ?")) {
+            statement.setInt(1, 2);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
