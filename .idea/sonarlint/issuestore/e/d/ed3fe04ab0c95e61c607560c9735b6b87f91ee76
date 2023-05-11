@@ -1,18 +1,0 @@
-
-W
-java:S1854":Remove this useless assignment to local variable "values".(«þÿË8ù ŒÜ÷0
-X	java:S125"<This block of commented-out lines of code should be removed.(í©‘“8€¡ŒÜ÷0
-X	java:S125"<This block of commented-out lines of code should be removed.(Å¼ù8¡ŒÜ÷0
-]	java:S125"<This block of commented-out lines of code should be removed.(Ç‡þÊüÿÿÿÿ8…¡ŒÜ÷0
-H
-java:S1481"+Remove this unused "values" local variable.(«þÿË8†¡ŒÜ÷0
-M
-java:S2201"+The return value of "compare" must be used.(¤¯ïËþÿÿÿÿ8ˆ¡ŒÜ÷0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(åÈø»8‰¡ŒÜ÷0
-X	java:S125"<This block of commented-out lines of code should be removed.(«€ñý8Ý»ŒÜ÷0
-Z	java:S106)"9Replace this use of System.out or System.err by a logger.(Ôµäûÿÿÿÿ8ïŽ­Ü÷0
-Z	java:S106*"9Replace this use of System.out or System.err by a logger.(ðáü²úÿÿÿÿ8¢é±Ü÷0
-{
-java:S1210@"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(¿»á´øÿÿÿÿ8‹¡ŒÜ÷0
-N
-java:S1128"1Remove this unused import 'java.util.Comparator'.(î¹ó¹8Š‘®Ü÷0
