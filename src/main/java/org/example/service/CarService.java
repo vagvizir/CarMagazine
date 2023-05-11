@@ -2,21 +2,24 @@ package org.example.service;
 
 import org.example.dao.CarDao;
 import org.example.dao.CarDaoImpl;
+import org.example.dto.CarFilter;
+import org.example.models.Bike;
 import org.example.models.Car;
 import org.example.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public interface CarService {
-    void saveCar(Car... cars);
-    Car getCar(int carId);
-    void deleteCar(int carId);
-    Car getMaxCarPrice();
-    Car getMinCarPrice();
-    Car getMaxCarPower();
-    Car getMinCarPower();
-    void bayCar(Person person, int id);
-    int sizeDB();
-    List<Car> getCars();
+    boolean createTable();
+    boolean dropTable();
+    void cleanTable();
+    Optional<Car> findById(int id);
+    boolean delete(int id);
+    boolean delete(String name);
+    List<Car> findAll();
+    List<Car> findAll(CarFilter carFilter);
+    void update(Car car);
+    Car save(Car car);
 }

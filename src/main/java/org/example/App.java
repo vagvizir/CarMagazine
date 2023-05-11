@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.dao.BikeDaoJdbcImpl;
+import org.example.dao.BikeDaoImpl;
 import org.example.models.Bike;
 import org.example.service.*;
 import org.example.models.Car;
@@ -15,7 +15,7 @@ public class App {
         Bike bikeSave = new Bike("BMW", 400, 1_000_000);
         Bike bikeSaveTwo = new Bike("Suzuki", 1000, 4_000_000);
 
-        BikeDaoJdbcImpl daoJdbc = new BikeDaoJdbcImpl();
+        BikeDaoImpl daoJdbc = new BikeDaoImpl();
 
 //        daoJdbc.dropTable();
 //        daoJdbc.dropTable();

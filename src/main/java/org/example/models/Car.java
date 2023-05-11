@@ -11,13 +11,15 @@ import lombok.ToString;
 @NoArgsConstructor
 
 public class Car {
+    private int id;
     private String name;
     private int powerHorse;
     private double price;
 
-    public Car(String name, int powerHorse, double price) {
-        this.price = price;
+    public Car(int id, String name, int powerHorse, double price) {
+        this.id = id;
         this.name = name;
         this.powerHorse = powerHorse;
+        this.price = price;
     }
 }

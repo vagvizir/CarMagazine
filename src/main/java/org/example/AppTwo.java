@@ -1,17 +1,10 @@
 package org.example;
 
-import org.example.dao.BikeDaoJdbcImpl;
+import org.example.dao.BikeDaoImpl;
 import org.example.dao.CarDaoJdbcImpl;
 import org.example.dao.PersonDaoJdbcImpl;
 import org.example.models.Bike;
-import org.example.models.Car;
 import org.example.models.Person;
-import org.example.util.ConnectionManager;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class AppTwo {
     public static void main(String[] args) {
@@ -39,7 +32,7 @@ public class AppTwo {
 //            throw new RuntimeException(e);
 //        }
 
-        BikeDaoJdbcImpl bikeDaoJdbcImpl = new BikeDaoJdbcImpl();
+        BikeDaoImpl bikeDaoJdbcImpl = new BikeDaoImpl();
         bikeDaoJdbcImpl.createTable();
         Bike bikeOne = new Bike("Suzuki", 100, 900_000);
 //        bikeDaoJdbcImpl.deleteBike("Suzuki");
@@ -60,7 +53,7 @@ public class AppTwo {
                 33,
                 5_600_000);
         personDaoJdbc.savePerson(personOne);
-        System.out.println(personDaoJdbc.getPerson(0));
+        System.out.println(personDaoJdbc.getPerson(1));
 
     }
 }
