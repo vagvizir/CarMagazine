@@ -191,15 +191,16 @@ public class PersonDaoImpl implements PersonDao{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        private Person buildPerson(ResultSet resultSet) throws SQLException {
-            return new Person(
-                    resultSet.getInt("id"),
-                    resultSet.getString("firstName"),
-                    resultSet.getString("lastName"),
-                    resultSet.getString("email"),
-                    resultSet.getInt("number"),
-                    resultSet.getDouble("money")
-            );
-        }
+    }
+
+    private Person buildPerson(ResultSet resultSet) throws SQLException {
+        return new Person(
+                resultSet.getInt("id"),
+                resultSet.getString("firstName"),
+                resultSet.getString("lastName"),
+                resultSet.getString("email"),
+                resultSet.getInt("number"),
+                resultSet.getDouble("money")
+        );
     }
 }

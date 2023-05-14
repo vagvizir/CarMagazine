@@ -12,13 +12,13 @@ import lombok.ToString;
 
 public class Car {
     private int id;
-    private String name;
+    private String model;
     private int powerHorse;
     private double price;
 
-    public Car(int id, String name, int powerHorse, double price) {
+    public Car(int id, String model, int powerHorse, double price) {
         this.id = id;
-        this.name = name;
+        this.model = model;
         this.powerHorse = powerHorse;
         this.price = price;
     }

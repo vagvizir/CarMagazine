@@ -19,6 +19,13 @@ public class AppTest {
         carService.saveCar(car); // size == 1
 
         assertEquals(carService.sizeDB(), 1);
+
+        try {
+            удаление таблицы;
+            Assertions.assertEquals(1, 1);
+        } catch () {
+            Assertions.assertEquals(1, 2);
+        }
     }
 
     @Test
