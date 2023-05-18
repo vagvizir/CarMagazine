@@ -17,7 +17,7 @@ public interface CarService {
     void cleanTable();
     Optional<Car> findById(int id);
     boolean delete(int id);
-    boolean delete(String name);
+    boolean delete(String model);
     List<Car> findAll();
     List<Car> findAll(CarFilter carFilter);
     void update(Car car);

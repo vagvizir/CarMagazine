@@ -22,7 +22,7 @@ public class BikeDaoImpl implements BikeDao {
     // dml
 
     private static final String CREATE_TABLE = """
-            CREATE TABLE IF NOT EXISTS bike (
+            CREATE TABLE IF NOT EXIST bike (
             id SERIAL primary key,
             model varchar(30) not null,
             power INT not null,
@@ -30,7 +30,7 @@ public class BikeDaoImpl implements BikeDao {
             )
             """;
     private static final String DELETE_TABLE = """
-            DROP TABLE IF EXISTS bike;
+            DROP TABLE IF EXIST bike;
             """;
     private static final String CLEAN_TABLE = """
             TRUNCATE TABLE bike;
