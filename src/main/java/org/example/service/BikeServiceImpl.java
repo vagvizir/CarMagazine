@@ -12,11 +12,13 @@ public class BikeServiceImpl implements BikeService {
     BikeDao bikeDao = BikeDaoImpl.getBikeDao();
     @Override
     public boolean createTable() {
+
         return bikeDao.createTable();
     }
 
     @Override
     public boolean dropTable() {
+
         return bikeDao.dropTable();
     }
 
